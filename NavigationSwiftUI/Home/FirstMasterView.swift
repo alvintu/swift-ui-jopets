@@ -19,7 +19,7 @@ struct FirstMasterView: View {
     var body: some View {
         NavigationView{
           VStack{
-            Text("These is your Jopet. Feed them correct foods to level them up and care for them").fontWeight(.ultraLight)
+            Text("This is your Jopet. Feed them correct foods to level them up and care for them").fontWeight(.ultraLight)
             JopetInfoView(jopet: self.nav.jopet)
             Spacer()
 

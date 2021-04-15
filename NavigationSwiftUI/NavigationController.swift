@@ -41,7 +41,7 @@ final class NavigationController: ObservableObject  {
     @Published var data: String = "hand me around" //data shared by multiple views, to hand around
     @Published var jocoins: Int = 0 //data shared by multiple views, to hand around
   
-  @Published var jopet: Jopet = Jopet(name: "Jetsam", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
+  @Published var jopet: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
   @Published var inventory: [InventoryItem] = []
   @Published var entry: String = ""
   @Published var answer = ""
@@ -176,6 +176,28 @@ final class NavigationController: ObservableObject  {
 //    🧉 Mate
 //    🧊 Ice
   ]
+  
+  
+  func setUpEquation() {
+    self.firstValue = randomInt()
+    self.secondValue = randomInt()
+    self.equation = equation(int1: self.firstValue, int2: self.secondValue)
+    self.answer = answer(int1:self.firstValue, int2: self.secondValue)
+
+  }
+
+  func equation(int1: Int, int2: Int) -> String{
+    return "\(int1) + \(int2)"
+  }
+  
+  func answer(int1: Int, int2: Int) -> String{
+    return String(int1 + int2)
+  }
+  
+  func randomInt() -> Int{
+    return Int.random(in: 5 ... 10)
+    
+}
 }
 
 

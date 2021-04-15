@@ -23,7 +23,7 @@ struct SecondMasterView: View {
                 if self.nav.answer == self.nav.entry {
                   self.nav.entry = ""
                   self.nav.jocoins += 10
-                  setUpEquation()
+                  self.nav.setUpEquation()
                   
                 }
                 if self.nav.entry.count > 2 {
@@ -92,31 +92,13 @@ struct SecondMasterView: View {
                 
             .navigationBarTitle(Text("jocoins: \(self.nav.jocoins)"))
         }.navigationViewStyle(StackNavigationViewStyle()).onAppear(perform: {
-      setUpEquation()
+          self.nav.setUpEquation()
         })
     }
   
-  func setUpEquation() {
-    self.nav.firstValue = randomInt()
-    self.nav.secondValue = randomInt()
-    self.nav.equation = equation(int1: self.nav.firstValue, int2: self.nav.secondValue)
-    self.nav.answer = answer(int1:self.nav.firstValue, int2: self.nav.secondValue)
 
   }
 
-  func equation(int1: Int, int2: Int) -> String{
-    return "\(int1) + \(int2)"
-  }
-  
-  func answer(int1: Int, int2: Int) -> String{
-    return String(int1 + int2)
-  }
-  
-  func randomInt() -> Int{
-    return Int.random(in: 5 ... 10)
-    
-  }
-}
 
 
 
