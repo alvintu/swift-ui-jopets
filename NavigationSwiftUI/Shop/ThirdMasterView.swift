@@ -12,9 +12,6 @@ struct ThirdMasterView: View {
   
   
   @EnvironmentObject var nav: NavigationController
-  @State private var showDetails = false
-  
-  
   
   var body: some View {
     
@@ -36,10 +33,6 @@ struct ThirdMasterView: View {
             LazyVGrid(columns: columns, spacing: 5) {
               ForEach(data.sorted(by: >), id: \.key) { key, value in
                 Button(action:{
-                  withAnimation {
-                    self.showDetails.toggle()
-                  }
-                  
                   if self.nav.jocoins > 0 {
                     self.nav.jocoins -= 10
                     
