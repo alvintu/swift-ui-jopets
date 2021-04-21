@@ -18,16 +18,22 @@ struct FirstMasterView: View {
     
     var body: some View {
         NavigationView{
+          
           VStack{
             Text("This is your Jopet. Feed them correct foods to level them up and care for them").fontWeight(.ultraLight)
-            JopetInfoView(jopet: self.nav.jopet)
-                
+            TabView {
+              JopetInfoView(jopet: self.nav.doge)
+              JopetInfoView(jopet: self.nav.cate)
+              JopetInfoView(jopet: self.nav.birde)
+                    }
+                    .tabViewStyle(PageTabViewStyle())
+
+
                 NavigationLink(destination: FirstDetailView(), isActive: self.$nav.tab1Detail1IsShown) {
                   Text("Inventory")
                   Image(systemName: "bag")
                 }
             }
-            
         .navigationBarTitle(Text("Feed your Jopet"))
         }.navigationViewStyle(StackNavigationViewStyle())
     }

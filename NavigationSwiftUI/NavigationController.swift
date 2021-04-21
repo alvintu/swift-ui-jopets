@@ -28,20 +28,22 @@ struct InventoryItem: Identifiable{
 
 final class NavigationController: ObservableObject  {
    
-    @Published var selection: Int = 0
-    
-    @Published var tab1Detail1IsShown = false
-    @Published var tab1Detail2IsShown = false
-    
-    @Published var tab2Detail1IsShown = false
-    @Published var tab2Detail2IsShown = false
-    
-    @Published var goToRootController = false
-    
-    @Published var data: String = "hand me around" //data shared by multiple views, to hand around
-    @Published var jocoins: Int = 0 //data shared by multiple views, to hand around
+  @Published var selection: Int = 0
   
-  @Published var jopet: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
+  @Published var tab1Detail1IsShown = false
+  @Published var tab1Detail2IsShown = false
+  
+  @Published var tab2Detail1IsShown = false
+  @Published var tab2Detail2IsShown = false
+  
+  @Published var goToRootController = false
+  
+  @Published var data: String = "your shopping list" //data shared by multiple views, to hand around
+  @Published var jocoins: Int = 0 //data shared by multiple views, to hand around
+  
+  @Published var doge: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
+  @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
+  @Published var birde: Jopet = Jopet(name: "Birde", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
   @Published var inventory: [InventoryItem] = []
   @Published var entry: String = ""
   @Published var answer = ""
