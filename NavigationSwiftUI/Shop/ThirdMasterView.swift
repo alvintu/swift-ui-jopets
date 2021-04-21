@@ -9,67 +9,67 @@
 import SwiftUI
 
 struct ThirdMasterView: View {
-    
-    @State var navController = (selection: 1, firstDetailIsShown: false, secondDetailIsShown: false)
-    
+  
+  
   @EnvironmentObject var nav: NavigationController
-
+  @State private var showDetails = false
+  
+  
+  
+  var body: some View {
     
-    var body: some View {
-      GeometryReader { geometry in
+    GeometryReader { geometry in
+      
+      NavigationView{
+        VStack{
+          Text("Spend your jocoins on foods your jopet loves").fontWeight(.ultraLight)
+          Text("jocoins: \(self.nav.jocoins)").fontWeight(.ultraLight)
+          Text("Inventory: \(self.nav.inventory.count)").fontWeight(.ultraLight)
 
-            NavigationView{
-                VStack{
-                  Text("Spend your jocoins on foods your jopet loves").fontWeight(.ultraLight)
-                  Text("jocoins: \(self.nav.jocoins)").fontWeight(.ultraLight)
-    
-//                  let data = (1...100).map { "Item \($0)" }
+          let columns = [
+            GridItem(.adaptive(minimum: 100))
+          ]
+          
+          let data = self.nav.foodDictionary
+          
+          ScrollView {
+            LazyVGrid(columns: columns, spacing: 5) {
+              ForEach(data.sorted(by: >), id: \.key) { key, value in
+                Button(action:{
+                  withAnimation {
+                    self.showDetails.toggle()
+                  }
                   
-                  let columns = [
-                      GridItem(.adaptive(minimum: 100))
-                  ]
-                  
-                  let data = self.nav.foodDictionary
-
-                      ScrollView {
-                          LazyVGrid(columns: columns, spacing: 5) {
-                            ForEach(data.sorted(by: >), id: \.key) { key, value in
-                              Button(action: {
-                                if self.nav.jocoins > 0 {
-                                self.nav.jocoins -= 1
-                                  let item = InventoryItem(emoji: key, name: value)
-                                  print(key, value)
-                                self.nav.inventory.append(item)
-                                }
-                                }) {
-                                VStack {
-                                  Text(key).font(.system(size: 100))
-                                  Text(value).fontWeight(.ultraLight)
-                                }
-                                  
-                                }
-                             
-                              }
-                          
-                          }
-                          .padding(.horizontal)
-                      }
-                      .frame(maxHeight: geometry.size.height)
-                  
-//                  Spacer()
+                  if self.nav.jocoins > 0 {
+                    self.nav.jocoins -= 10
                     
-//                    Text("use tupel to collect all the view isShown states and pass it as input parameter").lineLimit(3)
-                 
-                    
-//                    NavigationLink(destination: ThirdDetailView(navController: self.$navController), isActive: $navController.firstDetailIsShown) {
-//                            Text("go to detail")
-//                    }
-                    
+                    let item = InventoryItem(emoji: key, name: value)
+                    self.nav.inventory.append(item)
+                  }
+                })
+                {
+                  ShopItem(key: key, value: value)
                 }
-                    
-                .navigationBarTitle(Text("Spend Jocoins"))
-            }.navigationViewStyle(StackNavigationViewStyle())
+              }
+            }
+            .padding(.horizontal)
+          }
+          .frame(maxHeight: geometry.size.height)
+        }
+        .navigationBarTitle(Text("Spend Jocoins"))
+      }.navigationViewStyle(StackNavigationViewStyle())
     }
-    }
+  }
 }
 
+
+struct ShopItem: View {
+  var key: String
+  var value: String
+  var body: some View {
+    VStack {
+      Text(key).font(.system(size: 100))
+      Text(value).fontWeight(.ultraLight)
+    }
+  }
+}

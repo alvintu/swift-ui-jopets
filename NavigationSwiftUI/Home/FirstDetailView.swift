@@ -17,7 +17,8 @@ struct FirstDetailView: View {
   var body: some View {
     
     VStack(spacing: 20) {
-      Text("Inventory").font(.title)
+      Text("Inventory: \(self.nav.inventory.count)").fontWeight(.ultraLight)
+
       
       Text(self.nav.data).font(.body).padding().border(Color.black)
       

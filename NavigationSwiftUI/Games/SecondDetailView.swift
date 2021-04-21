@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct SecondDetailView: View {
-   
-    //@Binding var navController: (selection: Int, FirstDetailIsShown: Bool, SecondDetailIsShown: Bool)
-    
+       
     @EnvironmentObject var nav: NavigationController
     
     var body: some View {
