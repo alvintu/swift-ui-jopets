@@ -20,20 +20,20 @@ struct FirstMasterView: View {
         NavigationView{
           
           VStack{
-            Text("This is your Jopet. Feed them correct foods to level them up and care for them").fontWeight(.ultraLight)
+            Text("This is your Jopet. Feed them correct foods to level them up and care for them").fontWeight(.ultraLight).font(.system(size:20))
             TabView {
-              JopetInfoView(jopet: self.nav.doge)
-              JopetInfoView(jopet: self.nav.cate)
-              JopetInfoView(jopet: self.nav.birde)
-                    }
-                    .tabViewStyle(PageTabViewStyle())
+              JopetInfoView(jopet: self.nav.doge).background(Color.yellow).cornerRadius(20.0)
+              JopetInfoView(jopet: self.nav.cate).background(Color.purple).cornerRadius(20.0)
+              JopetInfoView(jopet: self.nav.birde).background(Color.orange).cornerRadius(20.0)
+            }
+            .tabViewStyle(PageTabViewStyle())
 
 
                 NavigationLink(destination: FirstDetailView(), isActive: self.$nav.tab1Detail1IsShown) {
                   Text("Inventory")
                   Image(systemName: "bag")
                 }
-            }
+          }
         .navigationBarTitle(Text("Feed your Jopet"))
         }.navigationViewStyle(StackNavigationViewStyle())
     }
@@ -50,12 +50,12 @@ struct JopetInfoView: View {
   let jopet: Jopet
   var body: some View {
     VStack{
-      Text(jopet.name)
-      Image(jopet.name.lowercased())
-      Text("hp:\(jopet.hitPoints)")
-      Text("hunger: " + String(format: "%.1f", jopet.hunger))
-      Text("level: \(jopet.level)")
-      Text(jopet.personality)
+      Text(jopet.name).font(.system(size:25))
+      Image(jopet.name.lowercased()).font(.system(size:25))
+      Text("hp:\(jopet.hitPoints)").font(.system(size:20))
+      Text("hunger: " + String(format: "%.1f", jopet.hunger)).font(.system(size:20))
+      Text("level: \(jopet.level)").font(.system(size:20))
+      Text(jopet.personality).font(.system(size:20))
     }
   }
 }

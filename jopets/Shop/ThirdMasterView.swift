@@ -20,8 +20,7 @@ struct ThirdMasterView: View {
       NavigationView{
         VStack{
           Text("Spend your jocoins on foods your jopet loves").fontWeight(.ultraLight)
-          Text("jocoins: \(self.nav.jocoins)").fontWeight(.ultraLight)
-          Text("Inventory: \(self.nav.inventory.count)").fontWeight(.ultraLight)
+          Text("Inventory: \(self.nav.inventory.count)").fontWeight(.light)
 
           let columns = [
             GridItem(.adaptive(minimum: 100))
@@ -49,7 +48,7 @@ struct ThirdMasterView: View {
           }
           .frame(maxHeight: geometry.size.height)
         }
-        .navigationBarTitle(Text("Spend Jocoins"))
+        .navigationBarTitle(Text("jocoins: \(self.nav.jocoins)"))
       }.navigationViewStyle(StackNavigationViewStyle())
     }
   }

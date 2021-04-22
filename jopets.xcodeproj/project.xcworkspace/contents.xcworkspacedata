@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:NavigationSwiftUI.xcodeproj">
+      location = "self:/Users/alvintu/Developer/swift-ui-jopets/jopets.xcodeproj">
    </FileRef>
 </Workspace>

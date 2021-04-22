@@ -12,9 +12,9 @@ import SwiftUI
 
 struct Jopet{
   let name: String
-  let hitPoints: Int
-  let hunger: Float
-  let level: Int
+  var hitPoints: Int
+  var hunger: Float
+  var level: Int
   let personality: String
 }
 
@@ -42,8 +42,8 @@ final class NavigationController: ObservableObject  {
   @Published var jocoins: Int = 0 //data shared by multiple views, to hand around
   
   @Published var doge: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
-  @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
-  @Published var birde: Jopet = Jopet(name: "Birde", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
+  @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 85 , hunger: 10.0, level: 1, personality: "grouchy")
+  @Published var birde: Jopet = Jopet(name: "Birde", hitPoints: 100 , hunger: 10.0, level: 1, personality: "confused")
   @Published var inventory: [InventoryItem] = []
   @Published var entry: String = ""
   @Published var answer = ""
@@ -197,7 +197,7 @@ final class NavigationController: ObservableObject  {
   }
   
   func randomInt() -> Int{
-    return Int.random(in: 5 ... 10)
+    return Int.random(in: 100 ... 200)
     
 }
 }

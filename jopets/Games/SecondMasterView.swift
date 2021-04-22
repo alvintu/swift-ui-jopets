@@ -16,12 +16,7 @@ struct SecondMasterView: View {
       
         NavigationView{
             VStack{
-
-              Text("""
-                Two plus two is four
-                Minus one that's three,\nquick maths\n\n
-                """).fontWeight(.ultraLight)
-              Text("Answer math questions to earn jocoins\n").fontWeight(.ultraLight)
+              Text("Answer math questions to earn jocoins\n").fontWeight(.ultraLight).font(.system(size:20))
               Text("What is:")
               Text(self.nav.equation)
               Text(self.nav.entry).onChange(of: self.nav.entry, perform: { value in

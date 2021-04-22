@@ -22,10 +22,11 @@
 		9A305BE123055BD40074AA06 /* ThirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE023055BD40074AA06 /* ThirdDetailView.swift */; };
 		9A305BE32305633B0074AA06 /* FirstTabLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE22305633B0074AA06 /* FirstTabLastView.swift */; };
 		9A305BE52305656A0074AA06 /* ThirdTabLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE42305656A0074AA06 /* ThirdTabLastView.swift */; };
+		C27120B72631AB3F00E28652 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C27120B62631AB3F00E28652 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A305BBD230553480074AA06 /* NavigationSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A305BBD230553480074AA06 /* jopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A305BC0230553480074AA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A305BC2230553480074AA06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9A305BC4230553480074AA06 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +43,7 @@
 		9A305BE023055BD40074AA06 /* ThirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdDetailView.swift; sourceTree = "<group>"; };
 		9A305BE22305633B0074AA06 /* FirstTabLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabLastView.swift; sourceTree = "<group>"; };
 		9A305BE42305656A0074AA06 /* ThirdTabLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabLastView.swift; sourceTree = "<group>"; };
+		C27120B62631AB3F00E28652 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,7 @@
 		9A305BB4230553480074AA06 = {
 			isa = PBXGroup;
 			children = (
-				9A305BBF230553480074AA06 /* NavigationSwiftUI */,
+				9A305BBF230553480074AA06 /* jopets */,
 				9A305BBE230553480074AA06 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,12 +68,12 @@
 		9A305BBE230553480074AA06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9A305BBD230553480074AA06 /* NavigationSwiftUI.app */,
+				9A305BBD230553480074AA06 /* jopets.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9A305BBF230553480074AA06 /* NavigationSwiftUI */ = {
+		9A305BBF230553480074AA06 /* jopets */ = {
 			isa = PBXGroup;
 			children = (
 				9A305BC0230553480074AA06 /* AppDelegate.swift */,
@@ -83,10 +85,11 @@
 				9A305BDE23055B3E0074AA06 /* NavigationController.swift */,
 				9A305BC62305534A0074AA06 /* Assets.xcassets */,
 				9A305BCB2305534A0074AA06 /* LaunchScreen.storyboard */,
+				C27120B62631AB3F00E28652 /* GoogleService-Info.plist */,
 				9A305BCE2305534A0074AA06 /* Info.plist */,
 				9A305BC82305534A0074AA06 /* Preview Content */,
 			);
-			path = NavigationSwiftUI;
+			path = jopets;
 			sourceTree = "<group>";
 		};
 		9A305BC82305534A0074AA06 /* Preview Content */ = {
@@ -129,9 +132,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9A305BBC230553480074AA06 /* NavigationSwiftUI */ = {
+		9A305BBC230553480074AA06 /* jopets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A305BD12305534A0074AA06 /* Build configuration list for PBXNativeTarget "NavigationSwiftUI" */;
+			buildConfigurationList = 9A305BD12305534A0074AA06 /* Build configuration list for PBXNativeTarget "jopets" */;
 			buildPhases = (
 				9A305BB9230553480074AA06 /* Sources */,
 				9A305BBA230553480074AA06 /* Frameworks */,
@@ -141,9 +144,9 @@
 			);
 			dependencies = (
 			);
-			name = NavigationSwiftUI;
+			name = jopets;
 			productName = NavigationSwiftUI;
-			productReference = 9A305BBD230553480074AA06 /* NavigationSwiftUI.app */;
+			productReference = 9A305BBD230553480074AA06 /* jopets.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -161,7 +164,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9A305BB8230553480074AA06 /* Build configuration list for PBXProject "NavigationSwiftUI" */;
+			buildConfigurationList = 9A305BB8230553480074AA06 /* Build configuration list for PBXProject "jopets" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -174,7 +177,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9A305BBC230553480074AA06 /* NavigationSwiftUI */,
+				9A305BBC230553480074AA06 /* jopets */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A305BCD2305534A0074AA06 /* LaunchScreen.storyboard in Resources */,
+				C27120B72631AB3F00E28652 /* GoogleService-Info.plist in Resources */,
 				9A305BCA2305534A0074AA06 /* Preview Assets.xcassets in Resources */,
 				9A305BC72305534A0074AA06 /* Assets.xcassets in Resources */,
 			);
@@ -345,16 +349,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "NavigationSwiftUI/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "jopets/Preview\\ Content";
 				DEVELOPMENT_TEAM = E64ACFS2Y6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NavigationSwiftUI/Info.plist;
+				INFOPLIST_FILE = jopets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "home-Karin.NavigationSwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alvin.jopets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,16 +370,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "NavigationSwiftUI/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "jopets/Preview\\ Content";
 				DEVELOPMENT_TEAM = E64ACFS2Y6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = NavigationSwiftUI/Info.plist;
+				INFOPLIST_FILE = jopets/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "home-Karin.NavigationSwiftUI";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alvin.jopets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -385,7 +389,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9A305BB8230553480074AA06 /* Build configuration list for PBXProject "NavigationSwiftUI" */ = {
+		9A305BB8230553480074AA06 /* Build configuration list for PBXProject "jopets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A305BCF2305534A0074AA06 /* Debug */,
@@ -394,7 +398,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A305BD12305534A0074AA06 /* Build configuration list for PBXNativeTarget "NavigationSwiftUI" */ = {
+		9A305BD12305534A0074AA06 /* Build configuration list for PBXNativeTarget "jopets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A305BD22305534A0074AA06 /* Debug */,
