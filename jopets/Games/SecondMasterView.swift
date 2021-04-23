@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import SpriteKit
+import GoogleMobileAds
 
 struct SecondMasterView: View {
   @EnvironmentObject var nav: NavigationController
@@ -16,7 +16,7 @@ struct SecondMasterView: View {
       
         NavigationView{
             VStack{
-              Text("Answer math questions to earn jocoins\n").fontWeight(.ultraLight).font(.system(size:20))
+              Text("Answer math questions to earn jocoins").fontWeight(.ultraLight).font(.system(size:20))
               Text("What is:")
               Text(self.nav.equation)
               Text(self.nav.entry).onChange(of: self.nav.entry, perform: { value in

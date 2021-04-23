@@ -16,6 +16,7 @@ struct Jopet{
   var hunger: Float
   var level: Int
   let personality: String
+  var foodEaten: [String]
 }
 
 struct InventoryItem: Identifiable{
@@ -38,12 +39,12 @@ final class NavigationController: ObservableObject  {
   
   @Published var goToRootController = false
   
-  @Published var data: String = "your shopping list" //data shared by multiple views, to hand around
+  @Published var data: String = "" //data shared by multiple views, to hand around
   @Published var jocoins: Int = 0 //data shared by multiple views, to hand around
   
-  @Published var doge: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 10.0, level: 1, personality: "mean")
-  @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 85 , hunger: 10.0, level: 1, personality: "grouchy")
-  @Published var birde: Jopet = Jopet(name: "Birde", hitPoints: 100 , hunger: 10.0, level: 1, personality: "confused")
+  @Published var doge: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 0.0, level: 1, personality: "mean", foodEaten: [])
+  @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 85 , hunger: 0.0, level: 1, personality: "grouchy", foodEaten: [])
+  @Published var birde: Jopet = Jopet(name: "Birde", hitPoints: 100 , hunger: 0.0, level: 1, personality: "confused", foodEaten: [])
   @Published var inventory: [InventoryItem] = []
   @Published var entry: String = ""
   @Published var answer = ""
@@ -179,6 +180,12 @@ final class NavigationController: ObservableObject  {
 //    🧊 Ice
   ]
   
+  var pricePerItem: Int = {
+    return Int.random(in: 50 ... 80)
+    
+}()
+
+  
   
   func setUpEquation() {
     self.firstValue = randomInt()
@@ -197,7 +204,7 @@ final class NavigationController: ObservableObject  {
   }
   
   func randomInt() -> Int{
-    return Int.random(in: 100 ... 200)
+    return Int.random(in: 1 ... 5)
     
 }
 }

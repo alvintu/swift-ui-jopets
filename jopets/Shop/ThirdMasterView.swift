@@ -12,6 +12,7 @@ struct ThirdMasterView: View {
   
   
   @EnvironmentObject var nav: NavigationController
+  let pricePerItem = 50
   
   var body: some View {
     
@@ -20,8 +21,8 @@ struct ThirdMasterView: View {
       NavigationView{
         VStack{
           Text("Spend your jocoins on foods your jopet loves").fontWeight(.ultraLight)
-          Text("Inventory: \(self.nav.inventory.count)").fontWeight(.light)
-
+          Text("Inventory: \(self.nav.inventory.count)").fontWeight(.light).font(.system(size: 15))
+            Text("Price: \(self.nav.pricePerItem)").fontWeight(.light).font(.system(size: 15))
           let columns = [
             GridItem(.adaptive(minimum: 100))
           ]
@@ -32,8 +33,8 @@ struct ThirdMasterView: View {
             LazyVGrid(columns: columns, spacing: 5) {
               ForEach(data.sorted(by: >), id: \.key) { key, value in
                 Button(action:{
-                  if self.nav.jocoins > 0 {
-                    self.nav.jocoins -= 10
+                  if self.nav.jocoins >= self.nav.pricePerItem {
+                    self.nav.jocoins -= self.nav.pricePerItem
                     
                     let item = InventoryItem(emoji: key, name: value)
                     self.nav.inventory.append(item)

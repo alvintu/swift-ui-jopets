@@ -51,11 +51,13 @@ struct JopetInfoView: View {
   var body: some View {
     VStack{
       Text(jopet.name).font(.system(size:25))
-      Image(jopet.name.lowercased()).font(.system(size:25))
+      Text(jopet.foodEaten.joined()).font(.system(size:20))
+      Image(jopet.name.lowercased())
       Text("hp:\(jopet.hitPoints)").font(.system(size:20))
       Text("hunger: " + String(format: "%.1f", jopet.hunger)).font(.system(size:20))
       Text("level: \(jopet.level)").font(.system(size:20))
       Text(jopet.personality).font(.system(size:20))
+
     }
   }
 }

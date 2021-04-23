@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AAE513C5494AE7945256321 /* Pods_jopets.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C19973A9094B27B872A512A /* Pods_jopets.framework */; };
 		9A305BC1230553480074AA06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BC0230553480074AA06 /* AppDelegate.swift */; };
 		9A305BC3230553480074AA06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BC2230553480074AA06 /* SceneDelegate.swift */; };
 		9A305BC5230553480074AA06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BC4230553480074AA06 /* ContentView.swift */; };
@@ -23,9 +24,13 @@
 		9A305BE32305633B0074AA06 /* FirstTabLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE22305633B0074AA06 /* FirstTabLastView.swift */; };
 		9A305BE52305656A0074AA06 /* ThirdTabLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE42305656A0074AA06 /* ThirdTabLastView.swift */; };
 		C27120B72631AB3F00E28652 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C27120B62631AB3F00E28652 /* GoogleService-Info.plist */; };
+		C27120EB2631B04D00E28652 /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27120EA2631B04D00E28652 /* FirebaseAnalytics.xcframework */; };
+		C27120ED2631B05500E28652 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27120D82631B03200E28652 /* GoogleMobileAds.xcframework */; };
+		C271211B2631E39B00E28652 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271211A2631E39B00E28652 /* BackButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C19973A9094B27B872A512A /* Pods_jopets.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jopets.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A305BBD230553480074AA06 /* jopets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jopets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A305BC0230553480074AA06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A305BC2230553480074AA06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +48,12 @@
 		9A305BE023055BD40074AA06 /* ThirdDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdDetailView.swift; sourceTree = "<group>"; };
 		9A305BE22305633B0074AA06 /* FirstTabLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabLastView.swift; sourceTree = "<group>"; };
 		9A305BE42305656A0074AA06 /* ThirdTabLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabLastView.swift; sourceTree = "<group>"; };
+		9C8FD81B5BDC54558C4EA4DE /* Pods-jopets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jopets.release.xcconfig"; path = "Target Support Files/Pods-jopets/Pods-jopets.release.xcconfig"; sourceTree = "<group>"; };
+		B5D70776026B7C2A05EBBB7C /* Pods-jopets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jopets.debug.xcconfig"; path = "Target Support Files/Pods-jopets/Pods-jopets.debug.xcconfig"; sourceTree = "<group>"; };
 		C27120B62631AB3F00E28652 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C27120D82631B03200E28652 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
+		C27120EA2631B04D00E28652 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
+		C271211A2631E39B00E28652 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +61,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C27120ED2631B05500E28652 /* GoogleMobileAds.xcframework in Frameworks */,
+				C27120EB2631B04D00E28652 /* FirebaseAnalytics.xcframework in Frameworks */,
+				6AAE513C5494AE7945256321 /* Pods_jopets.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DF763996F0DE56803E73573 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B5D70776026B7C2A05EBBB7C /* Pods-jopets.debug.xcconfig */,
+				9C8FD81B5BDC54558C4EA4DE /* Pods-jopets.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9A305BB4230553480074AA06 = {
 			isa = PBXGroup;
 			children = (
 				9A305BBF230553480074AA06 /* jopets */,
 				9A305BBE230553480074AA06 /* Products */,
+				1DF763996F0DE56803E73573 /* Pods */,
+				C15C6B79754A6C1347ED9789 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,11 +124,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C15C6B79754A6C1347ED9789 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C27120EA2631B04D00E28652 /* FirebaseAnalytics.xcframework */,
+				C27120D82631B03200E28652 /* GoogleMobileAds.xcframework */,
+				2C19973A9094B27B872A512A /* Pods_jopets.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C245DC7B26271D5000BF83D8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				9A305BD4230553630074AA06 /* FirstMasterView.swift */,
 				9A305BD6230553710074AA06 /* FirstDetailView.swift */,
+				C271211A2631E39B00E28652 /* BackButton.swift */,
 				9A305BE22305633B0074AA06 /* FirstTabLastView.swift */,
 			);
 			path = Home;
@@ -136,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A305BD12305534A0074AA06 /* Build configuration list for PBXNativeTarget "jopets" */;
 			buildPhases = (
+				F9E14BDB06EB8F31FF052C16 /* [CP] Check Pods Manifest.lock */,
 				9A305BB9230553480074AA06 /* Sources */,
 				9A305BBA230553480074AA06 /* Frameworks */,
 				9A305BBB230553480074AA06 /* Resources */,
+				FADE9272DF5A0DB5F4A2D70A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +233,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F9E14BDB06EB8F31FF052C16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-jopets-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FADE9272DF5A0DB5F4A2D70A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-jopets/Pods-jopets-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-jopets/Pods-jopets-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-jopets/Pods-jopets-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A305BB9230553480074AA06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -212,6 +291,7 @@
 				9A305BE32305633B0074AA06 /* FirstTabLastView.swift in Sources */,
 				9A305BDB2305589F0074AA06 /* SecondDetailView.swift in Sources */,
 				9A305BE52305656A0074AA06 /* ThirdTabLastView.swift in Sources */,
+				C271211B2631E39B00E28652 /* BackButton.swift in Sources */,
 				9A305BD5230553630074AA06 /* FirstMasterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,6 +426,7 @@
 		};
 		9A305BD22305534A0074AA06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D70776026B7C2A05EBBB7C /* Pods-jopets.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -358,6 +439,77 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alvin.jopets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -367,6 +519,7 @@
 		};
 		9A305BD32305534A0074AA06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C8FD81B5BDC54558C4EA4DE /* Pods-jopets.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -378,6 +531,77 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"AudioToolbox\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreMedia\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CoreVideo\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreDiagnostics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleMobileAds\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"MediaPlayer\"",
+					"-framework",
+					"\"MessageUI\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"UserMessagingPlatform\"",
+					"-framework",
+					"\"WebKit\"",
+					"-framework",
+					"\"nanopb\"",
+					"-weak_framework",
+					"\"AdSupport\"",
+					"-weak_framework",
+					"\"JavaScriptCore\"",
+					"-weak_framework",
+					"\"SafariServices\"",
+					"-weak_framework",
+					"\"WebKit\"",
+					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alvin.jopets;
 				PRODUCT_NAME = "$(TARGET_NAME)";

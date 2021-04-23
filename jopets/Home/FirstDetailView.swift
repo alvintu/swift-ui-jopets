@@ -8,19 +8,29 @@
 
 import SwiftUI
 
+enum JopetType {
+  case Doge
+  case Cate
+  case Birde
+}
+
 struct FirstDetailView: View {
-  
+  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   @EnvironmentObject var nav: NavigationController
+  @State private var showingSheet = false
+  @State private var jopetType: JopetType = .Doge
+  @State private var inventoryIndex: Int = 0
+  @State private var selectedEmoji: String = ""
+
   
   let timer = Timer.publish(every: 1, on: .current, in: .common).autoconnect()
   
   var body: some View {
     
     VStack(spacing: 20) {
-      Text("Inventory: \(self.nav.inventory.count)").fontWeight(.ultraLight)
 
+      Text("Inventory: \(self.nav.inventory.count)").fontWeight(.ultraLight)
       
-      Text(self.nav.data).font(.body).padding().border(Color.black)
       
       
       let columns = [
@@ -31,80 +41,111 @@ struct FirstDetailView: View {
       
       ScrollView {
         LazyVGrid(columns: columns, spacing: 5) {
-          ForEach(data, id: \.id) { item in
+          ForEach(Array(zip(data.indices,data )), id: \.0) { index, item in
             Button(action: {
-              if self.nav.jocoins > 0 {
-                //                        self.nav.jocoins -= 1
-                //                          let item = InventoryItem(emoji: key, name: "value")
-                //                          print(key, value)
-                //                        self.nav.inventory.append(item)
+                    inventoryIndex = index
+                    selectedEmoji = item.emoji
+                    print(item.name)
+                    showingSheet = true})
+            {
+              InventoryItemView(showingSheet: $showingSheet, jopetType:$jopetType,inventoryIndex: $inventoryIndex, emoji: item.emoji, name: item.name) {
+
+                switch jopetType {
+                case .Doge:
+                  self.nav.doge.foodEaten.append(selectedEmoji)
+                  self.nav.doge.hunger += 0.2
+                  self.nav.doge.level += 1
+                case .Cate:
+                  self.nav.cate.foodEaten.append(selectedEmoji)
+                  self.nav.cate.hunger += 0.2
+                  self.nav.cate.level += 1
+
+                case .Birde:
+                  self.nav.birde.foodEaten.append(selectedEmoji)
+                  self.nav.birde.hunger += 0.2
+                  self.nav.birde.level += 1
+                }
+                let itemIndex = self.nav.inventory.firstIndex(where: {$0.emoji == selectedEmoji})
+                self.nav.inventory.remove(at: itemIndex!)
+                
+                print(self.nav.inventory)
+                self.presentationMode.wrappedValue.dismiss()
+
+
               }
-            }) {
-              VStack {
-                Text(item.emoji).font(.system(size: 100))
-                Text(item.name).fontWeight(.ultraLight)
-              }
-              
             }
             
           }
-          
+          .padding(.horizontal)
         }
-        .padding(.horizontal)
+        
+        Text("Shopping List")
+        Text(self.nav.data).font(.body).border(Color.black).multilineTextAlignment(.center)
+
+
+        HStack(spacing: 50){
+          NavigationLink(destination: FirstTabLastView(), isActive: self.$nav.tab1Detail2IsShown) {
+            Text("earn jocoins")
+          }
+          Button(action: {
+            self.nav.tab1Detail1IsShown = false
+            self.nav.tab2Detail1IsShown = false
+            self.nav.selection = 1
+          }) { Text("Games")
+          }
+        }
       }
+      .navigationBarBackButtonHidden(true) // not needed, but just in case
+      .navigationBarItems(leading: MyBackButton(label: "Back") {
+        self.nav.tab1Detail1IsShown = false
+        
+      })
       
-      
-      HStack(spacing: 50){
-        NavigationLink(destination: FirstTabLastView(), isActive: self.$nav.tab1Detail2IsShown) {
-          Text("watch ads \nfor jocoins")
-        }
-        Button(action: {
-          self.nav.tab1Detail1IsShown = false
-          self.nav.tab2Detail1IsShown = false
-          self.nav.selection = 1
-        }) { Text("Games")
-        }
-      }
     }
-    
-    
-    
-    
-    //always call from one stackview above, which is the right event to further collapse navStack
-    //get notified when view is dissmised
-    //            .onReceive(self.nav.$tab1Detail2IsShown, perform: { (out) in
-    //                print("recieve goToRootController: \(self.nav.goToRootController) with detail \(self.nav.tab1Detail1IsShown.description) and detail \(self.nav.tab1Detail2IsShown.description)")
-    //                if self.nav.tab1Detail2IsShown ==  false && self.nav.tab1Detail1IsShown == true && self.nav.goToRootController == true {
-    //                    print("collapse stack")
-    //                    self.nav.tab1Detail1IsShown = false
-    //                }
-    //
-    //                if !self.nav.tab1Detail2IsShown && !self.nav.tab1Detail1IsShown && self.nav.goToRootController {
-    //                    print("finished collapsing")
-    //                    self.nav.goToRootController = false
-    //                }
-    //            })
-    
-    //   workaround problem with back button
-    .navigationBarBackButtonHidden(true) // not needed, but just in case
-    .navigationBarItems(leading: MyBackButton(label: "Back") {
-      self.nav.tab1Detail1IsShown = false
-      
-    })
-    
   }
-}
-
-
-struct MyBackButton: View {
-  let label: String
-  let closure: () -> ()
   
-  var body: some View {
-    Button(action: { self.closure() }) {
-      HStack {
-        Image(systemName: "chevron.left")
-        Text(label)
+  
+
+  
+  struct InventoryItemView: View {
+    @Binding var showingSheet: Bool
+    @Binding var jopetType: JopetType
+    @Binding var inventoryIndex: Int
+    @State var emoji: String
+    @State var name: String
+    var action = {}
+    
+    var body: some View {
+      VStack {
+        Text(emoji).font(.system(size: 100))
+        Text(name).fontWeight(.ultraLight)
+      }
+      .actionSheet(isPresented: $showingSheet) {
+        ActionSheet(
+          title: Text("Feed your pet \(emoji)"),
+          message: Text("There's only one choice..."),
+          buttons: [.default(Text("Feed Doge"))
+                      {
+                        print("doge")
+                        self.jopetType = .Doge
+                        self.action()
+
+                        
+                      },
+                    .default(Text("Feed Cate")){
+                      self.jopetType = .Cate
+
+                      self.action()
+
+
+                    },
+                    .default(Text("Feed Birde")){
+                      self.jopetType = .Birde
+                      self.action()
+
+                    },
+                    .default(Text("Dismiss"))]
+        )
       }
     }
   }

@@ -1,0 +1,6 @@
+framework module Pods_jopets {
+  umbrella header "Pods-jopets-umbrella.h"
+
+  export *
+  module * { export * }
+}
