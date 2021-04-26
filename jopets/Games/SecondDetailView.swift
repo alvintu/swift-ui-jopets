@@ -16,30 +16,34 @@ struct SecondDetailView: View {
     @EnvironmentObject var nav: NavigationController
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 10) {
           Text("jocoins: \(self.nav.jocoins)")
-            Text("second detail View").font(.title)
+//          Button(action: {
+//            if interstitial != nil {
+//              let root = UIApplication.shared.windows.first?.rootViewController
+//              interstitial.present(fromRootViewController: root!, userDidEarnRewardHandler: {
+//                self.nav.jocoins += 1
+//
+//              })
+//            } else {
+//              print("Ad wasn't ready")
+//            }
+//
+////            self.nav.jocoins += 1
+//          }) { Text("Watch ads for a jocoin")
+//          }
+//          .foregroundColor(.white)
+//          .padding()
+//          .background(Color.yellow)
+//          .cornerRadius(8)
+
           
-          Button(action: {
-            if interstitial != nil {
-              let root = UIApplication.shared.windows.first?.rootViewController
-              interstitial.present(fromRootViewController: root!, userDidEarnRewardHandler: {
-                self.nav.jocoins += 1
-
-              })
-            } else {
-              print("Ad wasn't ready")
-            }
-
-//            self.nav.jocoins += 1
-          }) { Text("Earn 1 jocoin")
-          }
           Button(action: {
             
             if rewardedAd != nil {
               let root = UIApplication.shared.windows.first?.rootViewController
               rewardedAd.present(fromRootViewController: root!, userDidEarnRewardHandler: {
-                self.nav.jocoins += 5
+                self.nav.jocoins += 3
 
               })
             } else {
@@ -47,10 +51,15 @@ struct SecondDetailView: View {
             }
             
 //            self.nav.jocoins += 5
-          }) { Text("Earn 5 jocoins")
+          }) { Text("Watch ads for 3 jocoins")
           }
+          .foregroundColor(.white)
+          .padding()
+          .background(Color.yellow)
+          .cornerRadius(8)
+
           
-            
+          HStack{
             Button(action: {
                 self.nav.tab1Detail1IsShown = true
                 self.nav.tab2Detail1IsShown = false
@@ -59,31 +68,41 @@ struct SecondDetailView: View {
               Text("Inventory")
               Image(systemName: "bag")
             }
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.orange)
+            .cornerRadius(8)
+          
             
             Button(action: {
                 self.nav.tab1Detail1IsShown = false
                 self.nav.tab2Detail1IsShown = false
-                self.nav.selection = 0
+                self.nav.selection = 2
             }) { Text("Shop")
             }
+            .foregroundColor(.white)
+            .padding()
+            .background(Color.green)
+            .cornerRadius(8)
+          }
             
-            TextField("shoppingList", text: self.$nav.data)
+            TextField("shopping list", text: self.$nav.data)
                 .textFieldStyle(RoundedBorderTextFieldStyle()).padding()
           
-          let rows = [
+          let columns = [
             GridItem(.adaptive(minimum: 100))
           ]
           
           let data = self.nav.foodDictionary
           
-          ScrollView(.horizontal) {
-            LazyHGrid(rows: rows, spacing: 5) {
+          ScrollView {
+            LazyVGrid(columns: columns, spacing: 5) {
               ForEach(data.sorted(by: >), id: \.key) { key, value in
                 Button(action:{
                   self.nav.data.append(key)
                 })
                 {
-                  ShopItem(key: key, value: value)
+                  ShopItem(key: key, value: "")
                 }
               }
             }

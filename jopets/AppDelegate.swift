@@ -20,8 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       FirebaseApp.configure()
       
       GADMobileAds.sharedInstance().start(completionHandler: nil)
-//      GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "a5e50c8e09c7fbbffd3ed82d0d576ca7" ]
-
+      GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ "a5e50c8e09c7fbbffd3ed82d0d576ca7" ]
         return true
     }
 

@@ -76,8 +76,13 @@ struct SecondMasterView: View {
               }
               
                 NavigationLink(destination: SecondDetailView(), isActive: $nav.tab2Detail1IsShown) {
-                        Text("earn fast jocoins")
+                        Text("earn more")
                 }
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.yellow)
+                .cornerRadius(8)
+
                 
             }
                 
@@ -106,7 +111,7 @@ struct CircleButton: View {
             
         }, label: {
             Text(title)
-                .frame(width: 100, height: 100)
+                .frame(width: 80, height: 80)
                 .overlay(
                     Circle()
                         .stroke(Color.blue, lineWidth: 2)

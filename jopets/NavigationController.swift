@@ -204,7 +204,7 @@ final class NavigationController: ObservableObject  {
   }
   
   func randomInt() -> Int{
-    return Int.random(in: 1 ... 5)
+    return Int.random(in: 100 ... 400)
     
 }
 }

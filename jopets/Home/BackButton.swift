@@ -21,6 +21,18 @@ struct MyBackButton: View {
       }
     }
   }
+
+struct FilledButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration
+            .label
+            .foregroundColor(configuration.isPressed ? .gray : .white)
+            .padding()
+            .background(Color.accentColor)
+            .cornerRadius(8)
+    }
+}
+
 struct MyBackButton_Previews: PreviewProvider {
     static var previews: some View {
       MyBackButton(label: "hello", closure: {})

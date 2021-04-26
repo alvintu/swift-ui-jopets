@@ -83,10 +83,7 @@ struct FirstDetailView: View {
         Text(self.nav.data).font(.body).border(Color.black).multilineTextAlignment(.center)
 
 
-        HStack(spacing: 50){
-          NavigationLink(destination: FirstTabLastView(), isActive: self.$nav.tab1Detail2IsShown) {
-            Text("earn jocoins")
-          }
+     
           Button(action: {
             self.nav.tab1Detail1IsShown = false
             self.nav.tab2Detail1IsShown = false
@@ -148,5 +145,4 @@ struct FirstDetailView: View {
         )
       }
     }
-  }
 }
