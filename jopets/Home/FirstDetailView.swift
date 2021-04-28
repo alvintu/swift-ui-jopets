@@ -45,7 +45,6 @@ struct FirstDetailView: View {
             Button(action: {
                     inventoryIndex = index
                     selectedEmoji = item.emoji
-                    print(item.name)
                     showingSheet = true})
             {
               InventoryItemView(showingSheet: $showingSheet, jopetType:$jopetType,inventoryIndex: $inventoryIndex, emoji: item.emoji, name: item.name) {
@@ -123,7 +122,6 @@ struct FirstDetailView: View {
           message: Text("There's only one choice..."),
           buttons: [.default(Text("Feed Doge"))
                       {
-                        print("doge")
                         self.jopetType = .Doge
                         self.action()
 
