@@ -10,7 +10,36 @@ import SwiftUI
 extension MathGameView {
 	
 	final class ViewModel: ObservableObject {
-		init() {
+		@Published var entry = ""
+		
+		@Published var firstValue = 0
+		@Published var secondValue = 0
+		@Published var answer = ""
+		@Published var equation = ""
+		
+//			var setUpEquation : Bool {
+//				firstValue = randomInt()
+//				secondValue = randomInt()
+//				equation = equation(int1: firstValue, int2: secondValue)
+//				answer = answer(int1:firstValue, int2: secondValue)
+//		
+//				return equation == answer
+//		
+//			}()
+		
+		func equation(int1: Int, int2: Int) -> String{
+			return "\(int1) + \(int2)"
+		}
+		
+		func answer(int1: Int, int2: Int) -> String{
+			return String(int1 + int2)
+		}
+		
+		func randomInt() -> Int{
+			return Int.random(in: 100 ... 400)
+			
+		}
+		 init() {
 		}
 	}
 }
