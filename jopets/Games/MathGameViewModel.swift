@@ -10,21 +10,32 @@ import SwiftUI
 extension MathGameView {
 	
 	final class ViewModel: ObservableObject {
-		@Published var entry = ""
 		@Published var answer = ""
 		@Published var equation = ""
+		@Published var firstValue = 0
+		@Published var secondValue = 0
+		var nav: NavigationController
 		
-		private var firstValue: Int {
-			return randomInt()
+		
+		
+		@Published var entry = "" {
+			didSet {
+				if entry == answer && entry != "" {
+					entry = ""
+					nav.jocoins += 10
+					setUpEquation()
+				}
+				
+				if entry.count > 3 {
+					entry = ""
+				}
+			}
 		}
-		
-		private var secondValue: Int {
-			return randomInt()
-		}
-		
 		
 		
 		func setUpEquation()  {
+			let firstValue = randomInt()
+			let secondValue = randomInt()
 			equation = equation(int1: firstValue, int2: secondValue)
 			answer = answer(int1:firstValue, int2: secondValue)
 			
@@ -39,10 +50,12 @@ extension MathGameView {
 		}
 		
 		private func randomInt() -> Int{
-			return Int.random(in: 100 ... 400)
+			return Int.random(in: 4 ... 7)
 			
 		}
-		init() {
+		init(nav: NavigationController) {
+			self.nav = nav
+			setUpEquation()
 		}
 	}
 }

@@ -30,7 +30,7 @@ struct ContentView: View {
                 }
                 .tag(0)
             
-			MathGameView(viewModel: MathGameView.ViewModel()) //(navController: $navController)
+			MathGameView(viewModel: MathGameView.ViewModel(nav: nav)) //(navController: $navController)
                 .font(.title)
                 .tabItem {
                     VStack {

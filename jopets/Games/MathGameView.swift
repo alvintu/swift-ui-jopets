@@ -10,7 +10,7 @@ import SwiftUI
 import GoogleMobileAds
 
 struct MathGameView: View {
-  @EnvironmentObject var nav: NavigationController
+	@EnvironmentObject var nav: NavigationController
 	@StateObject var viewModel: MathGameView.ViewModel
 
 
@@ -23,18 +23,9 @@ struct MathGameView: View {
               Text("Answer math questions to earn jocoins").fontWeight(.ultraLight).font(.system(size:20))
               Text("What is:")
 				Text(self.viewModel.equation)
-				Text(self.viewModel.entry).onChange(of: self.viewModel.entry, perform: { value in
-					if self.viewModel.answer == self.viewModel.entry {
-						self.viewModel.entry = ""
-						self.nav.jocoins += 10
-						self.viewModel.setUpEquation()
-                  
-                }
-					if self.viewModel.entry.count > 2 {
-						self.viewModel.entry = ""
-                }
-              })
-                  
+				Text(self.viewModel.entry)
+				Text(self.viewModel.answer)
+
               VStack(spacing:10) {
                   HStack{
                       CircleButton(title: "1") {
@@ -91,9 +82,7 @@ struct MathGameView: View {
             }
                 
             .navigationBarTitle(Text("jocoins: \(self.nav.jocoins)"))
-        }.navigationViewStyle(StackNavigationViewStyle()).onAppear(perform: {
-			self.viewModel.setUpEquation()
-        })
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
   
 
