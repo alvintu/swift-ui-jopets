@@ -12,14 +12,24 @@ extension MathGameView {
 	final class ViewModel: ObservableObject {
 		@Published var entry = ""
 		
-		@Published var firstValue = 0
-		@Published var secondValue = 0
+//		@Published var firstValue = 0
+//		@Published var secondValue = 0
 		@Published var answer = ""
 		@Published var equation = ""
 		
+	
+		
+		private var firstValue: Int {
+			return randomInt()
+		}
+		
+		private var secondValue: Int {
+			return randomInt()
+		}
+		
+		
+		
 			func setUpEquation()  {
-				firstValue = randomInt()
-				secondValue = randomInt()
 				equation = equation(int1: firstValue, int2: secondValue)
 				answer = answer(int1:firstValue, int2: secondValue)
 		
