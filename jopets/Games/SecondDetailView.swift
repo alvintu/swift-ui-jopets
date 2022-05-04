@@ -18,25 +18,6 @@ struct SecondDetailView: View {
     var body: some View {
         VStack(spacing: 10) {
           Text("jocoins: \(self.nav.jocoins)")
-//          Button(action: {
-//            if interstitial != nil {
-//              let root = UIApplication.shared.windows.first?.rootViewController
-//              interstitial.present(fromRootViewController: root!, userDidEarnRewardHandler: {
-//                self.nav.jocoins += 1
-//
-//              })
-//            } else {
-//              print("Ad wasn't ready")
-//            }
-//
-////            self.nav.jocoins += 1
-//          }) { Text("Watch ads for a jocoin")
-//          }
-//          .foregroundColor(.white)
-//          .padding()
-//          .background(Color.yellow)
-//          .cornerRadius(8)
-
           
           Button(action: {
             
@@ -50,7 +31,6 @@ struct SecondDetailView: View {
               print("Ad wasn't ready")
             }
             
-//            self.nav.jocoins += 5
           }) { Text("Watch ads for 3 jocoins")
           }
           .foregroundColor(.white)
