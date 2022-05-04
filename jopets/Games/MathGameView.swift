@@ -9,7 +9,7 @@
 import SwiftUI
 import GoogleMobileAds
 
-struct SecondMasterView: View {
+struct MathGameView: View {
   @EnvironmentObject var nav: NavigationController
 
     var body: some View {
@@ -99,7 +99,7 @@ struct SecondMasterView: View {
 
 
 
-private struct CircleButton: View {
+struct CircleButton: View {
     var title:String
     var action = {}
 

@@ -16,7 +16,7 @@
 		9A305BCD2305534A0074AA06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A305BCB2305534A0074AA06 /* LaunchScreen.storyboard */; };
 		9A305BD5230553630074AA06 /* FirstMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BD4230553630074AA06 /* FirstMasterView.swift */; };
 		9A305BD7230553710074AA06 /* FirstDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BD6230553710074AA06 /* FirstDetailView.swift */; };
-		9A305BD9230558920074AA06 /* SecondMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BD8230558920074AA06 /* SecondMasterView.swift */; };
+		9A305BD9230558920074AA06 /* MathGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BD8230558920074AA06 /* MathGameView.swift */; };
 		9A305BDB2305589F0074AA06 /* SecondDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BDA2305589F0074AA06 /* SecondDetailView.swift */; };
 		9A305BDD23055A310074AA06 /* ThirdMasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BDC23055A310074AA06 /* ThirdMasterView.swift */; };
 		9A305BDF23055B3E0074AA06 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BDE23055B3E0074AA06 /* NavigationController.swift */; };
@@ -41,7 +41,7 @@
 		9A305BCE2305534A0074AA06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A305BD4230553630074AA06 /* FirstMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMasterView.swift; sourceTree = "<group>"; };
 		9A305BD6230553710074AA06 /* FirstDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailView.swift; sourceTree = "<group>"; };
-		9A305BD8230558920074AA06 /* SecondMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondMasterView.swift; sourceTree = "<group>"; };
+		9A305BD8230558920074AA06 /* MathGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameView.swift; sourceTree = "<group>"; };
 		9A305BDA2305589F0074AA06 /* SecondDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondDetailView.swift; sourceTree = "<group>"; };
 		9A305BDC23055A310074AA06 /* ThirdMasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdMasterView.swift; sourceTree = "<group>"; };
 		9A305BDE23055B3E0074AA06 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -148,7 +148,7 @@
 		C245DC7D26271D5E00BF83D8 /* Games */ = {
 			isa = PBXGroup;
 			children = (
-				9A305BD8230558920074AA06 /* SecondMasterView.swift */,
+				9A305BD8230558920074AA06 /* MathGameView.swift */,
 				9A305BDA2305589F0074AA06 /* SecondDetailView.swift */,
 			);
 			path = Games;
@@ -287,7 +287,7 @@
 				9A305BDF23055B3E0074AA06 /* NavigationController.swift in Sources */,
 				9A305BE123055BD40074AA06 /* ThirdDetailView.swift in Sources */,
 				9A305BC5230553480074AA06 /* ContentView.swift in Sources */,
-				9A305BD9230558920074AA06 /* SecondMasterView.swift in Sources */,
+				9A305BD9230558920074AA06 /* MathGameView.swift in Sources */,
 				9A305BE32305633B0074AA06 /* FirstTabLastView.swift in Sources */,
 				9A305BDB2305589F0074AA06 /* SecondDetailView.swift in Sources */,
 				9A305BE52305656A0074AA06 /* ThirdTabLastView.swift in Sources */,

@@ -53,10 +53,6 @@ final class NavigationController: ObservableObject  {
   
   
   
-  
-  
-  
-  
   @Published var equation : String = ""
   @Published var foodDictionary: [String:String] = [
     "🍇" : "Grapes",
