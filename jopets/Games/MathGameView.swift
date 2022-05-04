@@ -27,7 +27,7 @@ struct MathGameView: View {
 					if self.viewModel.answer == self.viewModel.entry {
 						self.viewModel.entry = ""
                   self.nav.jocoins += 10
-//                  self.setUpEquation()
+						self.viewModel.setUpEquation()
                   
                 }
 					if self.viewModel.entry.count > 2 {
@@ -92,7 +92,7 @@ struct MathGameView: View {
                 
             .navigationBarTitle(Text("jocoins: \(self.nav.jocoins)"))
         }.navigationViewStyle(StackNavigationViewStyle()).onAppear(perform: {
-//          self.setUpEquation()
+			self.viewModel.setUpEquation()
         })
     }
   

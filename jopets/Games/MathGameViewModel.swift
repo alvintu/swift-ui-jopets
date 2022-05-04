@@ -17,15 +17,15 @@ extension MathGameView {
 		@Published var answer = ""
 		@Published var equation = ""
 		
-//			var setUpEquation : Bool {
-//				firstValue = randomInt()
-//				secondValue = randomInt()
-//				equation = equation(int1: firstValue, int2: secondValue)
-//				answer = answer(int1:firstValue, int2: secondValue)
-//		
+			func setUpEquation()  {
+				firstValue = randomInt()
+				secondValue = randomInt()
+				equation = equation(int1: firstValue, int2: secondValue)
+				answer = answer(int1:firstValue, int2: secondValue)
+		
 //				return equation == answer
-//		
-//			}()
+		
+			}
 		
 		func equation(int1: Int, int2: Int) -> String{
 			return "\(int1) + \(int2)"
