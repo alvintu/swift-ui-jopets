@@ -10,13 +10,13 @@ import SwiftUI
 extension MathGameView {
 	
 	final class ViewModel: ObservableObject {
+		
+		var nav: NavigationController
+
 		@Published var answer = ""
 		@Published var equation = ""
 		@Published var firstValue = 0
 		@Published var secondValue = 0
-		var nav: NavigationController
-		
-		
 		
 		@Published var entry = "" {
 			didSet {
@@ -41,15 +41,15 @@ extension MathGameView {
 			
 		}
 		
-		func equation(int1: Int, int2: Int) -> String{
+		func equation(int1: Int, int2: Int) -> String {
 			return "\(int1) + \(int2)"
 		}
 		
-		func answer(int1: Int, int2: Int) -> String{
+		func answer(int1: Int, int2: Int) -> String {
 			return String(int1 + int2)
 		}
 		
-		private func randomInt() -> Int{
+		private func randomInt() -> Int {
 			return Int.random(in: 4 ... 7)
 			
 		}
