@@ -99,15 +99,13 @@ struct SecondMasterView: View {
 
 
 
-struct CircleButton: View {
+private struct CircleButton: View {
     var title:String
     var action = {}
 
     var body: some View {
         Button(action: {
-            
                 self.action()
-
             
         }, label: {
             Text(title)

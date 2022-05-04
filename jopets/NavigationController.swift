@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-struct Jopet{
+struct Jopet {
   let name: String
   var hitPoints: Int
   var hunger: Float
@@ -19,9 +19,8 @@ struct Jopet{
   var foodEaten: [String]
 }
 
-struct InventoryItem: Identifiable{
+struct InventoryItem: Identifiable {
   let id = UUID()
-  
   let emoji: String
   let name: String
 }
