@@ -26,12 +26,12 @@ struct MathGameView: View {
 				Text(self.viewModel.entry).onChange(of: self.viewModel.entry, perform: { value in
 					if self.viewModel.answer == self.viewModel.entry {
 						self.viewModel.entry = ""
-                  self.nav.jocoins += 10
+						self.nav.jocoins += 10
 						self.viewModel.setUpEquation()
                   
                 }
 					if self.viewModel.entry.count > 2 {
-                  self.viewModel.entry = ""
+						self.viewModel.entry = ""
                 }
               })
                   
