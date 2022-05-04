@@ -11,6 +11,34 @@ import GoogleMobileAds
 
 struct MathGameView: View {
   @EnvironmentObject var nav: NavigationController
+	mutating var entry = ""
+	
+	var firstValue = 0, secondValue = 0
+	var answer = "", equation = ""
+	
+//	var setUpEquation : Bool {
+//		firstValue = randomInt()
+//		secondValue = randomInt()
+//		equation = equation(int1: firstValue, int2: secondValue)
+//		answer = answer(int1:firstValue, int2: secondValue)
+//
+//		return equation == answer
+//
+//	}()
+	
+	func equation(int1: Int, int2: Int) -> String{
+		return "\(int1) + \(int2)"
+	}
+	
+	func answer(int1: Int, int2: Int) -> String{
+		return String(int1 + int2)
+	}
+	
+	func randomInt() -> Int{
+		return Int.random(in: 100 ... 400)
+		
+	}
+
 
     var body: some View {
       
@@ -18,58 +46,58 @@ struct MathGameView: View {
             VStack{
               Text("Answer math questions to earn jocoins").fontWeight(.ultraLight).font(.system(size:20))
               Text("What is:")
-              Text(self.nav.equation)
-              Text(self.nav.entry).onChange(of: self.nav.entry, perform: { value in
-                if self.nav.answer == self.nav.entry {
-                  self.nav.entry = ""
+              Text(self.equation)
+              Text(self.entry).onChange(of: self.entry, perform: { value in
+                if self.answer == self.entry {
+                  self.entry = ""
                   self.nav.jocoins += 10
-                  self.nav.setUpEquation()
+//                  self.setUpEquation()
                   
                 }
-                if self.nav.entry.count > 2 {
-                  self.nav.entry = ""
+                if self.entry.count > 2 {
+                  self.entry = ""
                 }
               })
                   
               VStack(spacing:10) {
                   HStack{
                       CircleButton(title: "1") {
-                        self.nav.entry.append("1")
+                        self.entry.append("1")
                       }
                       CircleButton(title: "2") {
-                        self.nav.entry.append("2")
+                        self.entry.append("2")
                       }
                       CircleButton(title: "3") {
-                        self.nav.entry.append("3")
+                        self.entry.append("3")
                       }
                  
                   }
                   HStack{
                       CircleButton(title: "4") {
-                        self.nav.entry.append("4")
+                        self.entry.append("4")
                       }
                       CircleButton(title: "5") {
-                        self.nav.entry.append("5")
+                        self.entry.append("5")
                       }
                       CircleButton(title: "6") {
-                        self.nav.entry.append("6")
+                        self.entry.append("6")
                       }
                  
                   }
                   HStack{
                       CircleButton(title: "7") {
-                        self.nav.entry.append("7")
+                        self.entry.append("7")
                       }
                       CircleButton(title: "8") {
-                        self.nav.entry.append("8")
+                        self.entry.append("8")
                       }
                       CircleButton(title: "9") {
-                        self.nav.entry.append("9")
+                        self.entry.append("9")
                       }
                  }
                   HStack{
                       CircleButton(title: "0") {
-                        self.nav.entry.append("0")
+                        self.entry.append("0")
                       }
                  
                   }
@@ -88,7 +116,7 @@ struct MathGameView: View {
                 
             .navigationBarTitle(Text("jocoins: \(self.nav.jocoins)"))
         }.navigationViewStyle(StackNavigationViewStyle()).onAppear(perform: {
-          self.nav.setUpEquation()
+//          self.setUpEquation()
         })
     }
   

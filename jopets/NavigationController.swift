@@ -45,15 +45,6 @@ final class NavigationController: ObservableObject  {
   @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 85 , hunger: 0.0, level: 1, personality: "grouchy", foodEaten: [])
   @Published var birde: Jopet = Jopet(name: "Birde", hitPoints: 100 , hunger: 0.0, level: 1, personality: "confused", foodEaten: [])
   @Published var inventory: [InventoryItem] = []
-  @Published var entry: String = ""
-  @Published var answer = ""
-  @Published var firstValue : Int = 0
-  @Published var secondValue : Int = 0
-  
-  
-  
-  
-  @Published var equation : String = ""
   @Published var foodDictionary: [String:String] = [
     "🍇" : "Grapes",
     "🍈" : "Melon",
@@ -180,28 +171,6 @@ final class NavigationController: ObservableObject  {
     
 }()
 
-  
-  
-  func setUpEquation() {
-    self.firstValue = randomInt()
-    self.secondValue = randomInt()
-    self.equation = equation(int1: self.firstValue, int2: self.secondValue)
-    self.answer = answer(int1:self.firstValue, int2: self.secondValue)
-
-  }
-
-  func equation(int1: Int, int2: Int) -> String{
-    return "\(int1) + \(int2)"
-  }
-  
-  func answer(int1: Int, int2: Int) -> String{
-    return String(int1 + int2)
-  }
-  
-  func randomInt() -> Int{
-    return Int.random(in: 100 ... 400)
-    
-}
 }
 
 
