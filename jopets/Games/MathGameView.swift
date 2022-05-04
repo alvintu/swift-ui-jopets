@@ -11,6 +11,8 @@ import GoogleMobileAds
 
 struct MathGameView: View {
   @EnvironmentObject var nav: NavigationController
+	@StateObject var viewModel: MathGameView.ViewModel
+
 	mutating var entry = ""
 	
 	var firstValue = 0, secondValue = 0

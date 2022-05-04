@@ -23,6 +23,7 @@
 		9A305BE123055BD40074AA06 /* ThirdDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE023055BD40074AA06 /* ThirdDetailView.swift */; };
 		9A305BE32305633B0074AA06 /* FirstTabLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE22305633B0074AA06 /* FirstTabLastView.swift */; };
 		9A305BE52305656A0074AA06 /* ThirdTabLastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A305BE42305656A0074AA06 /* ThirdTabLastView.swift */; };
+		C2580B512822D63A003ADA6F /* MathGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2580B502822D63A003ADA6F /* MathGameViewModel.swift */; };
 		C27120B72631AB3F00E28652 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C27120B62631AB3F00E28652 /* GoogleService-Info.plist */; };
 		C27120EB2631B04D00E28652 /* FirebaseAnalytics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27120EA2631B04D00E28652 /* FirebaseAnalytics.xcframework */; };
 		C27120ED2631B05500E28652 /* GoogleMobileAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = C27120D82631B03200E28652 /* GoogleMobileAds.xcframework */; };
@@ -50,6 +51,7 @@
 		9A305BE42305656A0074AA06 /* ThirdTabLastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTabLastView.swift; sourceTree = "<group>"; };
 		9C8FD81B5BDC54558C4EA4DE /* Pods-jopets.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jopets.release.xcconfig"; path = "Target Support Files/Pods-jopets/Pods-jopets.release.xcconfig"; sourceTree = "<group>"; };
 		B5D70776026B7C2A05EBBB7C /* Pods-jopets.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jopets.debug.xcconfig"; path = "Target Support Files/Pods-jopets/Pods-jopets.debug.xcconfig"; sourceTree = "<group>"; };
+		C2580B502822D63A003ADA6F /* MathGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGameViewModel.swift; sourceTree = "<group>"; };
 		C27120B62631AB3F00E28652 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C27120D82631B03200E28652 /* GoogleMobileAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = GoogleMobileAds.xcframework; path = "Pods/Google-Mobile-Ads-SDK/Frameworks/GoogleMobileAdsFramework-Current/GoogleMobileAds.xcframework"; sourceTree = "<group>"; };
 		C27120EA2631B04D00E28652 /* FirebaseAnalytics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseAnalytics.xcframework; path = Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.xcframework; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				9A305BD8230558920074AA06 /* MathGameView.swift */,
+				C2580B502822D63A003ADA6F /* MathGameViewModel.swift */,
 				9A305BDA2305589F0074AA06 /* SecondDetailView.swift */,
 			);
 			path = Games;
@@ -282,6 +285,7 @@
 			files = (
 				9A305BC1230553480074AA06 /* AppDelegate.swift in Sources */,
 				9A305BD7230553710074AA06 /* FirstDetailView.swift in Sources */,
+				C2580B512822D63A003ADA6F /* MathGameViewModel.swift in Sources */,
 				9A305BDD23055A310074AA06 /* ThirdMasterView.swift in Sources */,
 				9A305BC3230553480074AA06 /* SceneDelegate.swift in Sources */,
 				9A305BDF23055B3E0074AA06 /* NavigationController.swift in Sources */,
