@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-struct Jopet {
+struct Pet {
   let name: String
   var hitPoints: Int
   var hunger: Float
@@ -41,9 +41,9 @@ final class NavigationController: ObservableObject  {
   @Published var data: String = "" //data shared by multiple views, to hand around
   @Published var coins: Int = 0 //data shared by multiple views, to hand around
   
-  @Published var doge: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 0.0, level: 1, personality: "mean", foodEaten: [])
-  @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 85 , hunger: 0.0, level: 1, personality: "grouchy", foodEaten: [])
-  @Published var birde: Jopet = Jopet(name: "Birde", hitPoints: 100 , hunger: 0.0, level: 1, personality: "confused", foodEaten: [])
+  @Published var doge: Pet = Pet(name: "Doge", hitPoints: 100 , hunger: 0.0, level: 1, personality: "mean", foodEaten: [])
+  @Published var cate: Pet = Pet(name: "Cate", hitPoints: 85 , hunger: 0.0, level: 1, personality: "grouchy", foodEaten: [])
+  @Published var birde: Pet = Pet(name: "Birde", hitPoints: 100 , hunger: 0.0, level: 1, personality: "confused", foodEaten: [])
   @Published var inventory: [InventoryItem] = []
   @Published var foodDictionary: [String:String] = [
     "🍇" : "Grapes",

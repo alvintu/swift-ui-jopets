@@ -67,7 +67,6 @@ struct FirstDetailView: View {
                 let itemIndex = self.nav.inventory.firstIndex(where: {$0.emoji == selectedEmoji})
                 self.nav.inventory.remove(at: itemIndex!)
                 
-                print(self.nav.inventory)
                 self.presentationMode.wrappedValue.dismiss()
 
 
