@@ -8,17 +8,17 @@
 
 import SwiftUI
 
-enum JopetType {
-  case Doge
-  case Cate
-  case Birde
+enum PetType {
+  case Dog
+  case Cat
+  case Bird
 }
 
 struct FirstDetailView: View {
   @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
   @EnvironmentObject var nav: NavigationController
   @State private var showingSheet = false
-  @State private var jopetType: JopetType = .Doge
+  @State private var petType: PetType = .Dog
   @State private var inventoryIndex: Int = 0
   @State private var selectedEmoji: String = ""
 
@@ -47,19 +47,19 @@ struct FirstDetailView: View {
                     selectedEmoji = item.emoji
                     showingSheet = true})
             {
-              InventoryItemView(showingSheet: $showingSheet, jopetType:$jopetType,inventoryIndex: $inventoryIndex, emoji: item.emoji, name: item.name) {
+              InventoryItemView(showingSheet: $showingSheet, petType:$petType,inventoryIndex: $inventoryIndex, emoji: item.emoji, name: item.name) {
 
-                switch jopetType {
-                case .Doge:
+                switch petType {
+                case .Dog:
                   self.nav.doge.foodEaten.append(selectedEmoji)
                   self.nav.doge.hunger += 0.2
                   self.nav.doge.level += 1
-                case .Cate:
+                case .Cat:
                   self.nav.cate.foodEaten.append(selectedEmoji)
                   self.nav.cate.hunger += 0.2
                   self.nav.cate.level += 1
 
-                case .Birde:
+                case .Bird:
                   self.nav.birde.foodEaten.append(selectedEmoji)
                   self.nav.birde.hunger += 0.2
                   self.nav.birde.level += 1
@@ -105,7 +105,7 @@ struct FirstDetailView: View {
   
   struct InventoryItemView: View {
     @Binding var showingSheet: Bool
-    @Binding var jopetType: JopetType
+    @Binding var petType: PetType
     @Binding var inventoryIndex: Int
     @State var emoji: String
     @State var name: String
@@ -122,20 +122,20 @@ struct FirstDetailView: View {
           message: Text("There's only one choice..."),
           buttons: [.default(Text("Feed Doge"))
                       {
-                        self.jopetType = .Doge
+                        self.petType = .Dog
                         self.action()
 
                         
                       },
                     .default(Text("Feed Cate")){
-                      self.jopetType = .Cate
+                      self.petType = .Cat
 
                       self.action()
 
 
                     },
                     .default(Text("Feed Birde")){
-                      self.jopetType = .Birde
+                      self.petType = .Bird
                       self.action()
 
                     },
