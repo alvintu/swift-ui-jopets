@@ -20,7 +20,7 @@ struct MathGameView: View {
       
         NavigationView{
             VStack{
-              Text("Answer math questions to earn jocoins").fontWeight(.ultraLight).font(.system(size:20))
+              Text("Answer math questions to earn coins").fontWeight(.ultraLight).font(.system(size:20))
               Text("What is:")
 				Text(self.viewModel.equation)
 				Text(self.viewModel.entry)
@@ -81,7 +81,7 @@ struct MathGameView: View {
                 
             }
                 
-            .navigationBarTitle(Text("jocoins: \(self.nav.jocoins)"))
+            .navigationBarTitle(Text("coins: \(self.nav.coins)"))
         }.navigationViewStyle(StackNavigationViewStyle())
     }
   

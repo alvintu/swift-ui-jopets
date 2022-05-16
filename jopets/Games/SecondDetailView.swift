@@ -17,21 +17,21 @@ struct SecondDetailView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-          Text("jocoins: \(self.nav.jocoins)")
+          Text("coins: \(self.nav.coins)")
           
           Button(action: {
             
             if rewardedAd != nil {
               let root = UIApplication.shared.windows.first?.rootViewController
               rewardedAd.present(fromRootViewController: root!, userDidEarnRewardHandler: {
-                self.nav.jocoins += 3
+                self.nav.coins += 3
 
               })
             } else {
               print("Ad wasn't ready")
             }
             
-          }) { Text("Watch ads for 3 jocoins")
+          }) { Text("Watch ads for 3 coins")
           }
           .foregroundColor(.white)
           .padding()

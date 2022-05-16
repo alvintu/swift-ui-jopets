@@ -39,7 +39,7 @@ final class NavigationController: ObservableObject  {
   @Published var goToRootController = false
   
   @Published var data: String = "" //data shared by multiple views, to hand around
-  @Published var jocoins: Int = 0 //data shared by multiple views, to hand around
+  @Published var coins: Int = 0 //data shared by multiple views, to hand around
   
   @Published var doge: Jopet = Jopet(name: "Doge", hitPoints: 100 , hunger: 0.0, level: 1, personality: "mean", foodEaten: [])
   @Published var cate: Jopet = Jopet(name: "Cate", hitPoints: 85 , hunger: 0.0, level: 1, personality: "grouchy", foodEaten: [])

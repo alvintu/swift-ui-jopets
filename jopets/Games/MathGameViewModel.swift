@@ -12,7 +12,7 @@ extension MathGameView {
 	final class ViewModel: ObservableObject {
 		
 		var nav: NavigationController
-
+		
 		@Published var answer = ""
 		@Published var equation = ""
 		@Published var firstValue = 0
@@ -22,7 +22,7 @@ extension MathGameView {
 			didSet {
 				if entry == answer && entry != "" {
 					entry = ""
-					nav.jocoins += 10
+					nav.coins += 10
 					setUpEquation()
 				}
 				
