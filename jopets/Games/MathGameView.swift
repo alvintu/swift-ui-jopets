@@ -70,9 +70,7 @@ struct MathGameView: View {
                   }
               }
               
-                NavigationLink(destination: SecondDetailView(), isActive: $nav.tab2Detail1IsShown) {
-                        Text("earn more")
-                }
+		
                 .foregroundColor(.white)
                 .padding()
                 .background(Color.yellow)
