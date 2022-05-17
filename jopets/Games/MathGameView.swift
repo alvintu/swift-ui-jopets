@@ -69,16 +69,12 @@ struct MathGameView: View {
                  
                   }
               }
-              
-		
                 .foregroundColor(.white)
                 .padding()
                 .background(Color.yellow)
                 .cornerRadius(8)
 
-                
             }
-                
             .navigationBarTitle(Text("coins: \(self.nav.coins)"))
         }.navigationViewStyle(StackNavigationViewStyle())
     }

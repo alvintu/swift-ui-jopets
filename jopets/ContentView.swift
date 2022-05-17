@@ -9,9 +9,6 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @State private var selection = 0
-//
-//    @State var navController = (selection: 1, FirstDetailIsShown: false, SecondDetailIsShown: false)
     
     @EnvironmentObject var nav: NavigationController
 
